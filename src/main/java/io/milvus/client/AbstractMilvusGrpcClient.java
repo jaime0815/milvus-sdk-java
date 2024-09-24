@@ -339,7 +339,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             HasCollectionRequest.Builder builder = HasCollectionRequest.newBuilder()
@@ -376,7 +376,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             // Construct CreateDatabaseRequest
@@ -438,7 +438,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             // Construct DropDatabaseRequest
@@ -472,7 +472,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             // Construct CollectionSchema Params
@@ -526,7 +526,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             DropCollectionRequest.Builder builder = DropCollectionRequest.newBuilder()
@@ -562,7 +562,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             LoadCollectionRequest.Builder builder = LoadCollectionRequest.newBuilder()
@@ -609,7 +609,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             ReleaseCollectionRequest releaseCollectionRequest = ReleaseCollectionRequest.newBuilder()
@@ -642,7 +642,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             RenameCollectionRequest renameCollectionRequest = RenameCollectionRequest.newBuilder()
@@ -676,7 +676,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             DescribeCollectionRequest.Builder builder = DescribeCollectionRequest.newBuilder()
@@ -709,7 +709,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             // flush collection if client command to do it(some times user may want to know the newest row count)
@@ -754,7 +754,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             ShowCollectionsRequest.Builder builder = ShowCollectionsRequest.newBuilder()
@@ -788,7 +788,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             AlterCollectionRequest.Builder alterCollRequestBuilder = AlterCollectionRequest.newBuilder();
@@ -828,7 +828,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             MsgBase msgBase = MsgBase.newBuilder().setMsgType(MsgType.Flush).build();
@@ -868,7 +868,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo("start flushAll...");
+
         try {
             FlushAllRequest flushAllRequest = FlushAllRequest.newBuilder().build();
             FlushAllResponse response = blockingStub().flushAll(flushAllRequest);
@@ -894,7 +894,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             CreatePartitionRequest createPartitionRequest = CreatePartitionRequest.newBuilder()
@@ -928,7 +928,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             DropPartitionRequest dropPartitionRequest = DropPartitionRequest.newBuilder()
@@ -962,7 +962,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             HasPartitionRequest hasPartitionRequest = HasPartitionRequest.newBuilder()
@@ -994,7 +994,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             LoadPartitionsRequest.Builder builder = LoadPartitionsRequest.newBuilder()
@@ -1040,7 +1040,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             ReleasePartitionsRequest releasePartitionsRequest = ReleasePartitionsRequest.newBuilder()
@@ -1074,7 +1074,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             // flush collection if client command to do it(some times user may want to know the newest row count)
@@ -1117,7 +1117,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             ShowPartitionsRequest showPartitionsRequest = ShowPartitionsRequest.newBuilder()
@@ -1148,7 +1148,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             CreateAliasRequest createAliasRequest = CreateAliasRequest.newBuilder()
@@ -1182,7 +1182,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             DropAliasRequest dropAliasRequest = DropAliasRequest.newBuilder()
@@ -1214,7 +1214,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             AlterAliasRequest alterAliasRequest = AlterAliasRequest.newBuilder()
@@ -1248,7 +1248,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             // get collection schema to check input
@@ -1339,7 +1339,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             DropIndexRequest dropIndexRequest = DropIndexRequest.newBuilder()
@@ -1373,7 +1373,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             DescribeIndexRequest.Builder builder = DescribeIndexRequest.newBuilder()
@@ -1409,7 +1409,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             GetIndexStateRequest getIndexStateRequest = GetIndexStateRequest.newBuilder()
@@ -1442,7 +1442,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             GetIndexBuildProgressRequest getIndexBuildProgressRequest = GetIndexBuildProgressRequest.newBuilder()
@@ -1475,7 +1475,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             DeleteRequest deleteRequest = DeleteRequest.newBuilder()
@@ -1511,7 +1511,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             DescribeCollectionParam.Builder builder = DescribeCollectionParam.newBuilder()
@@ -1554,7 +1554,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
                     R.failed(new ClientNotConnectedException("Client rpc channel is not ready")));
         }
 
-        logInfo(requestParam.toString());
+
 
         DescribeCollectionParam.Builder builder = DescribeCollectionParam.newBuilder()
                 .withDatabaseName(requestParam.getDatabaseName())
@@ -1611,7 +1611,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             DescribeCollectionParam.Builder builder = DescribeCollectionParam.newBuilder()
@@ -1653,7 +1653,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
                     R.failed(new ClientNotConnectedException("Client rpc channel is not ready")));
         }
 
-        logInfo(requestParam.toString());
+
 
         DescribeCollectionParam.Builder builder = DescribeCollectionParam.newBuilder()
                 .withDatabaseName(requestParam.getDatabaseName())
@@ -1710,7 +1710,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             SearchRequest searchRequest = ParamUtils.convertSearchParam(requestParam);
@@ -1743,7 +1743,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
                     R.failed(new ClientNotConnectedException("Client rpc channel is not ready")));
         }
 
-        logInfo(requestParam.toString());
+
 
         SearchRequest searchRequest = ParamUtils.convertSearchParam(requestParam);
         ListenableFuture<SearchResults> response = this.futureStub().search(searchRequest);
@@ -1788,7 +1788,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             QueryRequest queryRequest = ParamUtils.convertQueryParam(requestParam);
@@ -1826,7 +1826,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
                     R.failed(new ClientNotConnectedException("Client rpc channel is not ready")));
         }
 
-        logInfo(requestParam.toString());
+
 
         QueryRequest queryRequest = ParamUtils.convertQueryParam(requestParam);
         ListenableFuture<QueryResults> response = this.futureStub().query(queryRequest);
@@ -1871,7 +1871,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             GetMetricsRequest getMetricsRequest = GetMetricsRequest.newBuilder()
@@ -1901,7 +1901,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             GetFlushStateRequest getFlushStateRequest = GetFlushStateRequest.newBuilder()
@@ -1933,7 +1933,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             MsgBase msgBase = MsgBase.newBuilder().setMsgType(MsgType.Flush).build();
@@ -1965,7 +1965,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             GetPersistentSegmentInfoRequest getSegmentInfoRequest = GetPersistentSegmentInfoRequest.newBuilder()
@@ -1995,7 +1995,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             GetQuerySegmentInfoRequest getSegmentInfoRequest = GetQuerySegmentInfoRequest.newBuilder()
@@ -2025,7 +2025,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             R<DescribeCollectionResponse> descResp = describeCollection(DescribeCollectionParam.newBuilder()
@@ -2064,7 +2064,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             LoadBalanceRequest loadBalanceRequest = LoadBalanceRequest.newBuilder()
@@ -2096,7 +2096,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             GetCompactionStateRequest getCompactionStateRequest = GetCompactionStateRequest.newBuilder()
@@ -2126,7 +2126,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             R<DescribeCollectionResponse> descResp = describeCollection(DescribeCollectionParam.newBuilder()
@@ -2164,7 +2164,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             GetCompactionPlansRequest getCompactionPlansRequest = GetCompactionPlansRequest.newBuilder()
@@ -2194,7 +2194,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             CreateCredentialRequest createCredentialRequest = CreateCredentialRequest.newBuilder()
@@ -2227,7 +2227,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             UpdateCredentialRequest updateCredentialRequest = UpdateCredentialRequest.newBuilder()
@@ -2260,7 +2260,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             DeleteCredentialRequest deleteCredentialRequest = DeleteCredentialRequest.newBuilder()
@@ -2291,7 +2291,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             ListCredUsersRequest listCredUsersRequest = ListCredUsersRequest.newBuilder()
@@ -2323,7 +2323,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             OperateUserRoleRequest request = OperateUserRoleRequest.newBuilder()
@@ -2356,7 +2356,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             OperateUserRoleRequest request = OperateUserRoleRequest.newBuilder()
@@ -2389,7 +2389,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             CreateRoleRequest request = CreateRoleRequest.newBuilder()
@@ -2421,7 +2421,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             DropRoleRequest request = DropRoleRequest.newBuilder()
@@ -2451,7 +2451,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             SelectRoleRequest request = SelectRoleRequest.newBuilder()
@@ -2484,7 +2484,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
         try {
             SelectUserRequest request = SelectUserRequest.newBuilder()
                     .setUser(UserEntity.newBuilder().setName(requestParam.getUserName()).build())
@@ -2514,7 +2514,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         GrantEntity.Builder builder = GrantEntity.newBuilder()
                 .setRole(RoleEntity.newBuilder().setName(requestParam.getRoleName()).build())
@@ -2554,7 +2554,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
         try {
             OperatePrivilegeRequest request = OperatePrivilegeRequest.newBuilder()
                     .setType(OperatePrivilegeType.Revoke)
@@ -2590,7 +2590,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             SelectGrantRequest request = SelectGrantRequest.newBuilder()
@@ -2621,7 +2621,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
         try {
             SelectGrantRequest request = SelectGrantRequest.newBuilder()
                     .setEntity(GrantEntity.newBuilder()
@@ -2654,7 +2654,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             ImportRequest.Builder importRequest = ImportRequest.newBuilder()
@@ -2694,7 +2694,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             GetImportStateRequest getImportStateRequest = GetImportStateRequest.newBuilder()
@@ -2723,7 +2723,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             ListImportTasksRequest listImportTasksRequest = ListImportTasksRequest.newBuilder()
@@ -2753,7 +2753,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             GetLoadingProgressRequest getLoadingProgressRequest = GetLoadingProgressRequest.newBuilder()
@@ -2787,7 +2787,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             GetLoadStateRequest.Builder builder = GetLoadStateRequest.newBuilder()
@@ -2868,7 +2868,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             CreateResourceGroupRequest request = CreateResourceGroupRequest.newBuilder()
@@ -2899,7 +2899,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             DropResourceGroupRequest request = DropResourceGroupRequest.newBuilder()
@@ -2930,7 +2930,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             ListResourceGroupsRequest request = ListResourceGroupsRequest.newBuilder()
@@ -2957,7 +2957,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             DescribeResourceGroupRequest request = DescribeResourceGroupRequest.newBuilder()
@@ -2988,7 +2988,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             TransferNodeRequest request = TransferNodeRequest.newBuilder()
@@ -3021,7 +3021,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
 
-        logInfo(requestParam.toString());
+
 
         try {
             TransferReplicaRequest request = TransferReplicaRequest.newBuilder()
@@ -3060,7 +3060,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
         if (!clientIsReady()) {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
-        logInfo(requestParam.toString());
+
         
         try {
             // step1: create collection
@@ -3100,7 +3100,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
         if (!clientIsReady()) {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
-        logInfo(requestParam.toString());
+
         
         try {
             R<ShowCollectionsResponse> response = showCollections(requestParam.getShowCollectionsParam());
@@ -3126,7 +3126,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
         if (!clientIsReady()) {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
-        logInfo(requestParam.toString());
+
         
         try {
             R<MutationResult> response = insert(requestParam.getInsertParam());
@@ -3152,7 +3152,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
         if (!clientIsReady()) {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
-        logInfo(requestParam.toString());
+
 
         try {
             DescribeCollectionParam.Builder builder = DescribeCollectionParam.newBuilder()
@@ -3188,7 +3188,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
         if (!clientIsReady()) {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
-        logInfo(requestParam.toString());
+
 
         try {
             DescribeCollectionParam.Builder builder = DescribeCollectionParam.newBuilder()
@@ -3232,7 +3232,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
         if (!clientIsReady()) {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
-        logInfo(requestParam.toString());
+
 
         try {
             DescribeCollectionParam.Builder builder = DescribeCollectionParam.newBuilder()
@@ -3280,7 +3280,7 @@ public abstract class AbstractMilvusGrpcClient implements MilvusClient {
         if (!clientIsReady()) {
             return R.failed(new ClientNotConnectedException("Client rpc channel is not ready"));
         }
-        logInfo(requestParam.toString());
+
 
         try {
             DescribeCollectionParam.Builder builder = DescribeCollectionParam.newBuilder()

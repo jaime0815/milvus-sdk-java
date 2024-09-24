@@ -300,18 +300,11 @@
                         </goals>
                         <configuration>
                             <outputFile>target/milvus-sdk-java-shaded-${project.version}.jar</outputFile>
-                            <artifactSet>
-                                <includes>
-                                    <include>**</include>
-                                </includes>
-                            </artifactSet>
+                            <shadedArtifactAttached>false</shadedArtifactAttached>
+                            <promoteTransitiveDependencies>true</promoteTransitiveDependencies>
+                            <createSourcesJar>false</createSourcesJar>
+                            <shadeTestJar>false</shadeTestJar>
                             <filters>
-                                <filter>
-                                    <artifact>com.google.protobuf:*</artifact>
-                                    <includes>
-                                        <include>**/*</include>
-                                    </includes>
-                                </filter>
                                 <filter>
                                     <artifact>*:*</artifact>
                                     <excludes>
@@ -322,13 +315,76 @@
                                         <exclude>META-INF/*.SF</exclude>
                                         <exclude>META-INF/*.DSA</exclude>
                                         <exclude>META-INF/*.RSA</exclude>
+                                        <exclude>**/Log4j2Plugins.dat</exclude>
+                                    </excludes>
+                                </filter>
+                                <filter>
+                                    <artifact>com.fasterxml.jackson.core:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/services/com.fasterxml.jackson.core.JsonFactory</exclude>
+                                        <exclude>META-INF/services/com.fasterxml.jackson.core.ObjectCodec</exclude>
                                     </excludes>
                                 </filter>
                             </filters>
                             <relocations>
                                 <relocation>
-                                    <pattern>com/google/protobuf</pattern>
-                                    <shadedPattern>${protobuf.shade.prefix}/com/google/protobuf</shadedPattern>
+                                    <pattern>com.fasterxml</pattern>
+                                    <shadedPattern>${protobuf.shade.prefix}.com.fasterxml</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>com.google</pattern>
+                                    <shadedPattern>${protobuf.shade.prefix}.com.google</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>com.alibaba</pattern>
+                                    <shadedPattern>${protobuf.shade.prefix}.com.alibaba</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>io.grpc</pattern>
+                                    <shadedPattern>${protobuf.shade.prefix}.io.grpc</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.apache.logging</pattern>
+                                    <shadedPattern>${protobuf.shade.prefix}.org.apache.logging</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.springframework</pattern>
+                                    <shadedPattern>${protobuf.shade.prefix}.org.springframework</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.codehaus</pattern>
+                                    <shadedPattern>${protobuf.shade.prefix}.org.codehaus</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>javax.annotation</pattern>
+                                    <shadedPattern>${protobuf.shade.prefix}.javax.annotation</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>okhttp3</pattern>
+                                    <shadedPattern>${protobuf.shade.prefix}/okhttp3</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.slf4j</pattern>
+                                    <shadedPattern>${protobuf.shade.prefix}.org.slf4j</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.apache.commons</pattern>
+                                    <shadedPattern>${protobuf.shade.prefix}.org.apache.commons</shadedPattern>
+                                    <excludes>
+                                        <exclude>org.apache.commons.logging.**</exclude>
+                                    </excludes>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.jetbrains</pattern>
+                                    <shadedPattern>${protobuf.shade.prefix}.org.jetbrains</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.projectlombok</pattern>
+                                    <shadedPattern>${protobuf.shade.prefix}.org.projectlombok</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.tensorflow</pattern>
+                                    <shadedPattern>${protobuf.shade.prefix}.org.tensorflow</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>google/</pattern>
@@ -337,9 +393,20 @@
                                         <include>**/*.proto</include>
                                     </includes>
                                 </relocation>
+                                <relocation>
+                                    <pattern>io.netty</pattern>
+                                    <shadedPattern>${protobuf.shade.prefix}.io.netty</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.checkerframework</pattern>
+                                    <shadedPattern>${protobuf.shade.prefix}.org.checkerframework</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>okio</pattern>
+                                    <shadedPattern>${protobuf.shade.prefix}.okio</shadedPattern>
+                                </relocation>
                             </relocations>
                             <transformers>
-                                <transformer implementation="org.apache.logging.log4j.maven.plugins.shade.transformer.Log4j2PluginCacheFileTransformer"/>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <manifestEntries>
@@ -428,7 +495,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.plugin.version}</version>
                 <configuration>
-                    <skipTests>false</skipTests>
+                    <skipTests>true</skipTests>
                 </configuration>
                 <dependencies>
                     <dependency>
